@@ -1,4 +1,4 @@
 
 #[余奇的github博客](http://yuqi17.github.io)
 
-# 用脑子思考，用眼睛观察，用手指敲代码，用嘴交流。苦中作乐，消遣时光。
+# Well,Welcome to my github blog。

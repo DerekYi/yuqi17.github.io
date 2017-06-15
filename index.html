@@ -92,6 +92,7 @@
         .hbox {
             display: flex;
             margin-bottom: 8px;
+            justify-content: space-around;
         }
 
         .desc {
@@ -139,19 +140,24 @@
             color: #fff;
         }
 
-        #exp_1{
+        
+
+        div[id^='exp_']{
             opacity: 1;
-            animation: fadeIn ease 1s;
+            /*animation: fadeIn ease 2s;*/
+            cursor:pointer;
+            border-bottom: 1px dashed darkcyan;
         }
 
-        #exp_2{
-            opacity: 1;
-            animation: fadeIn ease 2s;
+        .date,.company,.job{
+            display: inline-block;
+            text-align: center;
+            width:33%;
         }
 
-        #exp_3{
-            opacity: 1;
-            animation: fadeIn ease 3s;
+        div[id^='prj_']{
+            margin-bottom: 8px;
+            border-bottom: 1px dashed darkcyan;
         }
 
         @keyframes fadeIn{
@@ -164,6 +170,10 @@
                 opacity: 1;
             }
         }
+
+        /*table{
+            border:1px darkcyan solid;
+        }*/
     </style>
 </head>
 
@@ -255,14 +265,30 @@
                 <h5>工作经历</h5>
             </div>
             <div class="panel-body">
-                <table border="1px">
+                <div id="exp_1" class="hbox">
+                    <div class="date">2011-7-2013-12</div>
+                    <div class="company">南京中兴软创股份有限公司</div>
+                    <div class="job">flex开发工程师</div>
+                </div>
+                <div id="exp_2" class="hbox">
+                    <div class="date">2014-3-2016-8</div>
+                    <div class="company">上海心意答信息科技有限公司</div>
+                    <div class="job">前端开发工程师</div>
+                </div>
+                <div id="exp_3" class="hbox">
+                    <div class="date">2016-至今</div>
+                    <div class="company">上海心意答信息科技有限公司</div>
+                    <div class="job">nodejs 全栈开发工程师</div>
+                </div>
+
+                <!--<table border="1px" cellspacing='0' width ='100%'>
                     <tr id="exp_1" onclick="scroll('#exp_1','#prj_1')">
-                        <td>2011-2013</td>
+                        <td>2011-7-2013-12</td>
                         <td>南京中兴软创股份有限公司</td>
                         <td>flex开发工程师</td>
                     </tr>
                     <tr id="exp_2" onclick="scroll('#exp_2','#prj_2')">
-                        <td> 2014-2016</td>
+                        <td> 2014-3-2016-8</td>
                         <td>上海心意答信息科技有限公司</td>
                         <td>前端开发工程师</td>
                     </tr>
@@ -271,7 +297,7 @@
                         <td>上海智思信息科技有限公司</td>
                         <td>nodejs 全栈开发工程师</td>
                     </tr>
-                </table>
+                </table>-->
             </div>
         </div>
         <div class="panel">
@@ -279,9 +305,35 @@
                 <h5>项目经历</h5>
             </div>
             <div class="panel-body">
-                <p id="prj_1">1.zsmart_cvbs</p>
-                <p id="prj_2">2.心意答考试系统</p>
-                <p id="prj_3">3.智思云SASS HR 平台</p>
+                <div id="prj_1">
+                    <b>1.Zsmart_cvbs 系统</b> 
+                    <section>
+                        项目描述:&nbsp;&nbsp;一个电信业务配置系统,基于 flex 和 java 两种主要技术开发.
+                    </section>
+                    <section>
+                    我的职责:&nbsp;&nbsp;负责活动管理模块和商机管理模块的后端服务和界面开发.
+                    </section>
+                </div>
+                
+                <div id="prj_2">
+                    <b>2.心意答考试系统</b>
+                    <section>
+                        项目描述:&nbsp;&nbsp;这个项目包含了学校信息管理,考试管理,阅卷管理三个子系统.
+                    </section>
+                    <section>
+                        我的职责:&nbsp;&nbsp;负责三个模块的全部的前端开发和部分nodejs端开发.
+                    </section>
+                </div>
+
+                <div id="prj_2">
+                    <b>3.智思云SASS HR 平台</b>
+                    <section>
+                        项目描述:&nbsp;&nbsp;此项目是一个公司办公系统,包括了人事管理,绩效管理,考勤管理,合同管理等模块
+                    </section>
+                    <section>
+                        我的职责:&nbsp;&nbsp;负责合同模块的开发和维护
+                    </section>
+                </div>
             </div>
         </div>
         <div class="panel">
@@ -289,7 +341,7 @@
                 <h5>教育经历</h5>
             </div>
             <div class="panel-body">
-                2009-2011 信阳第七工业学校
+                2009-2011 信阳第七工业学校 &nbsp; 中专
             </div>
         </div>
         <div class="panel" id="last">
@@ -297,8 +349,7 @@
                 <h5>写在最后</h5>
             </div>
             <div class="panel-body">
-                谢谢您看到了这里,这个简历的代码是我独立完成的,尽量不用第三方,尽量适配多个屏幕,由于没有做低版本IE浏览器兼容,请您最好用chrome 浏览器查看,希望它能给您留下一个面试的好印象.当然技术的海洋中,我这点皮毛算不了什么. 关于我的教育经历,我想在这里讲清楚,我目前在自考陕西师范大学大专学历
-                学籍是学信网可查的 不过2019年才能毕业. 我是在2009-2011年在武汉的一家培训学校学习,期间获得了计算机相关的资格证书. 相当于是中专的文凭.诚心的希望能够凭借自己的能力和努力为您的公司创造价值.
+                谢谢您看到了这里,这个简历的代码是我独立完成的,尽量不用第三方,尽量适配多种屏幕,由于没有做低版本IE浏览器兼容,请您最好用 chrome 浏览器查看,希望它能给您留下一个面试的好印象.谢谢.
             </div>
         </div>
     </main>
@@ -351,7 +402,14 @@
         }
 
         window.addEventListener('scroll', function () {
-            $('#to_top').style.opacity = document.body.scrollTop > 0 ? 0.6 : 0;
+            var scrollTop = document.body.scrollTop;
+
+            $('#to_top').style.opacity = scrollTop > 0 ? 0.6 : 0;
+
+            if(scrollTop >= 524){
+                $("div[id^='exp_']").style.animation = 'fadeIn ease 2s'
+
+            }
         })
     </script>
 </body>

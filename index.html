@@ -12,6 +12,10 @@
             padding: 0;
         }
 
+        a{
+            color:darkcyan;
+        }
+
         html {
             font-size: 100px;
         }
@@ -134,6 +138,32 @@
             width:70%;
             color: #fff;
         }
+
+        #exp_1{
+            opacity: 1;
+            animation: fadeIn ease 1s;
+        }
+
+        #exp_2{
+            opacity: 1;
+            animation: fadeIn ease 2s;
+        }
+
+        #exp_3{
+            opacity: 1;
+            animation: fadeIn ease 3s;
+        }
+
+        @keyframes fadeIn{
+            from{
+                height: 0;
+                opacity: 0;
+            }
+            to{
+                height: 20px;
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
@@ -225,7 +255,7 @@
                 <h5>工作经历</h5>
             </div>
             <div class="panel-body">
-                <table >
+                <table border="1px">
                     <tr id="exp_1" onclick="scroll('#exp_1','#prj_1')">
                         <td>2011-2013</td>
                         <td>南京中兴软创股份有限公司</td>

@@ -458,7 +458,7 @@
                 谢谢您看到了这里,这个简历的代码是我独立完成的,尽量不用第三方,尽量适配多种屏幕,由于没有做低版本IE浏览器兼容,请您最好用 chrome 浏览器查看,希望它能给您留下一个面试的好印象.谢谢.
             </div>
         </div>
-        <audio id="bgm" autoplay="autoplay" loop="loop" preload="preload" src='summer1.mp3'>IE 11 no supported wav formmt</audio>
+        <audio id="bgm" autoplay="autoplay" loop="loop" preload="preload" src='./audios/summer1.mp3'>IE 11 no supported wav formmt</audio>
     </main>
     <footer>
         <address>
@@ -567,7 +567,7 @@
             if(bgm){
                 if(bgm.paused){
                     $('#pause').style.animation = 'play linear 1s infinite';
-
+                    // it can't work
                     // $('#pause').classList.add('pause')
                     // $('#pause').style.WebkitAnimationPlayState = 'running';
                     bgm.play();
@@ -578,7 +578,7 @@
                     $('#pause').style.animation = 'none'; 
 
                     // it can't work
-                    // $('#pause').classList.add('pause')
+                    // $('#pause').classList.remove('pause')
                     // $('#pause').style.WebkitAnimationPlayState   = 'pause';
                     bgm.pause();
                 }

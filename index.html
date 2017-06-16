@@ -147,8 +147,8 @@
             border-bottom: 1px dashed darkcyan;
         }
 
-        div[id^='exp_']:hover{
-            border:2px solid red;
+        div[id^='exp_']:hover {
+            border: 2px solid red;
         }
 
         .date,
@@ -178,27 +178,40 @@
             border:1px darkcyan solid;
         }*/
 
-        .len > div{
-            background-color:darkcyan;
+        .len>div {
+            background-color: darkcyan;
         }
 
-        code{
+        code {
             display: inline-block;
             height: 20px;
             line-height: 20px;
-            margin:2px;
-            color:#fff;
+            margin: 2px;
+            color: #fff;
             font-weight: bold;
             background-color: darkcyan;
             border-radius: 3px;
-            padding:2px;
-            border:1px solid darkcyan;
+            padding: 2px;
+            border: 1px solid darkcyan;
+        }
+
+        #scroll-percent{
+            /*IE 11 no support this style*/
+            background:-webkit-linear-gradient(left,red,green);
+            background:-moz-linear-gradient(left,red,green);
+            background:-o-linear-gradient(left,red,green);
+            background:linear-gradient(left,red,green);
+            opacity: 0.7;
+            height: 5px;
+            position: fixed;
+            width: 0%;
         }
     </style>
 </head>
 
 <body>
     <div id="to_top" onclick="scroll('#to_top','body')">Top</div>
+    <div id="scroll-percent"></div>
     <header>
         余奇的简历
         <button id="print" class="noprint" onclick="window.print()">打印</button>
@@ -246,21 +259,21 @@
                 <div class="hbox">
                     <label>css3</label>
                     <div class="len">
-                        <div style="width:50%;">熟练</div>
+                        <div style="width:70%;">熟练</div>
                     </div>
                 </div>
 
                 <div class="hbox">
                     <label>html5</label>
                     <div class="len">
-                        <div style="width:50%;">熟练</div>
+                        <div style="width:66%;">熟练</div>
                     </div>
                 </div>
 
                 <div class="hbox">
                     <label>javascript</label>
                     <div class="len">
-                        <div style="width:50%;">熟练</div>
+                        <div style="width:80%;">熟练</div>
                     </div>
                 </div>
 
@@ -274,7 +287,7 @@
                 <div class="hbox">
                     <label>java</label>
                     <div class="len">
-                        <div style="width:50%;">熟练</div>
+                        <div style="width:70%;">熟练</div>
                     </div>
                 </div>
             </div>
@@ -290,12 +303,12 @@
                     <div class="company">南京中兴软创股份有限公司</div>
                     <div class="job">flex开发工程师</div>
                 </div>
-                <div id="exp_2"onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_2','#prj_2')" class="hbox">
+                <div id="exp_2" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_2','#prj_2')" class="hbox">
                     <div class="date">2014-3-2016-8</div>
                     <div class="company">上海心意答信息科技有限公司</div>
                     <div class="job">前端开发工程师</div>
                 </div>
-                <div id="exp_3"onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_3','#prj_3')" class="hbox">
+                <div id="exp_3" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_3','#prj_3')" class="hbox">
                     <div class="date">2016-至今</div>
                     <div class="company">上海智思信息科技有限公司</div>
                     <div class="job">nodejs 全栈开发工程师</div>
@@ -317,7 +330,7 @@
                     </section>
                     <section>
                         用到技术:&nbsp;&nbsp;
-                        <code>java</code> 
+                        <code>java</code>
                         <code>flex</code>
                         <code>plsql</code>
                     </section>
@@ -410,8 +423,7 @@
                 谢谢您看到了这里,这个简历的代码是我独立完成的,尽量不用第三方,尽量适配多种屏幕,由于没有做低版本IE浏览器兼容,请您最好用 chrome 浏览器查看,希望它能给您留下一个面试的好印象.谢谢.
             </div>
         </div>
-            <audio autoplay ="autoplay" loop="loop" 
-    preload="preload"  src='./audios/summer1.mp3'>IE 11 no supported wav formmt</audio>
+        <audio autoplay="autoplay" loop="loop" preload="preload" src='./audios/summer1.mp3'>IE 11 no supported wav formmt</audio>
     </main>
     <footer>
         <address>
@@ -433,19 +445,19 @@
             return (!!window.ActiveXObject || "ActiveXObject" in window)
         }
 
-        function setScroll(step){
-            if(isIE()){
+        function setScroll(step) {
+            if (isIE()) {
                 document.documentElement.scrollTop += step;
             }
             else
                 document.body.scrollTop += step;
         }
 
-        function getScrollHeight(){
+        function getScrollHeight() {
             return document.body.scrollHeight || document.documentElement.scrollHeight;
         }
 
-        function getScrollTop(){
+        function getScrollTop() {
             return document.body.scrollTop || document.documentElement.scrollTop;
         }
 
@@ -480,27 +492,33 @@
         }
 
         window.addEventListener('scroll', function () {
- 
-            var scrollTop = getScrollTop();
 
+            var scrollTop = getScrollTop();
+            var scrollHeight = getScrollHeight();
+
+            //to top 
             $('#to_top').style.opacity = scrollTop > 0 ? 0.6 : 0;
 
+            //show prj
             if (scrollTop === 524) {//this is a magic number
                 $("div[id^='exp_']").style.animation = 'fadeIn ease 1s'
                 // play animation first and for it can be played again delay 1s
-                setTimeout(function() {
+                setTimeout(function () {
                     $("div[id^='exp_']").style.animation = 'none'
                 }, 1000);
             }
+
+            //scroll show 
+            $('#scroll-percent').style.width = (scrollTop / (scrollHeight - window.innerHeight)) * 100 + '%';
         })
 
-        function show_prjs(e){
+        function show_prjs(e) {
             var eid = e.currentTarget.id;
-            var pidSelector = '#' + eid.replace('exp','prj')
+            var pidSelector = '#' + eid.replace('exp', 'prj')
             $(pidSelector).style.border = '2px solid red';
         }
 
-        function hide_prjs(e){
+        function hide_prjs(e) {
             var eid = e.currentTarget.id;
             var pidSelector = '#' + eid.replace('exp', 'prj')
 

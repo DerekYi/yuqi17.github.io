@@ -197,24 +197,59 @@
 
         #scroll-percent{
             /*IE 11 no support this style*/
-            background:-webkit-linear-gradient(left,red,green);
-            background:-moz-linear-gradient(left,red,green);
-            background:-o-linear-gradient(left,red,green);
-            background:linear-gradient(left,red,green);
-            opacity: 0.7;
+            background:-webkit-linear-gradient(left,blue,red);
+            background:-moz-linear-gradient(left,blue,red);
+            background:-o-linear-gradient(left,blue,red);
+            background:linear-gradient(left,blue,red);
             height: 5px;
             position: fixed;
             width: 0%;
         }
+
+        @keyframes play{
+            from{
+                transform:rotate(0deg)
+            }
+            to{
+                transform:rotate(360deg)
+            }
+        }
+
+        #pause{
+            display: block;
+            position: fixed;
+            top:3px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            color:#fff;
+            background: darkcyan;
+            border-radius:25px;
+            cursor:pointer;
+            opacity: .8;
+
+            outline:none;
+            border:none;
+
+            animation:play linear 1s infinite;         
+            /*animation:play steps(20)  1s infinite both;       */
+        }
+
+        /*.pause {
+            animation-play-state: paused;
+        }*/
     </style>
 </head>
 
 <body>
     <div id="to_top" onclick="scroll('#to_top','body')">Top</div>
+    <button id="pause" class="noprint" onclick="pause()">♫</button>
     <div id="scroll-percent"></div>
+    
     <header>
         余奇的简历
         <button id="print" class="noprint" onclick="window.print()">打印</button>
+
     </header>
     <main>
         <div class="panel">
@@ -423,7 +458,7 @@
                 谢谢您看到了这里,这个简历的代码是我独立完成的,尽量不用第三方,尽量适配多种屏幕,由于没有做低版本IE浏览器兼容,请您最好用 chrome 浏览器查看,希望它能给您留下一个面试的好印象.谢谢.
             </div>
         </div>
-        <audio autoplay="autoplay" loop="loop" preload="preload" src='./audios/summer1.mp3'>IE 11 no supported wav formmt</audio>
+        <audio id="bgm" autoplay="autoplay" loop="loop" preload="preload" src='summer1.mp3'>IE 11 no supported wav formmt</audio>
     </main>
     <footer>
         <address>
@@ -525,6 +560,29 @@
             // little
             $(pidSelector).style.border = 'none';
             $(pidSelector).style.borderBottom = '1px dashed darkcyan';
+        }
+
+        function pause(){
+            var bgm = $('#bgm')
+            if(bgm){
+                if(bgm.paused){
+                    $('#pause').style.animation = 'play linear 1s infinite';
+
+                    // $('#pause').classList.add('pause')
+                    // $('#pause').style.WebkitAnimationPlayState = 'running';
+                    bgm.play();
+                }
+                else{
+                    
+                    // it's not good
+                    $('#pause').style.animation = 'none'; 
+
+                    // it can't work
+                    // $('#pause').classList.add('pause')
+                    // $('#pause').style.WebkitAnimationPlayState   = 'pause';
+                    bgm.pause();
+                }
+            }
         }
     </script>
 </body>

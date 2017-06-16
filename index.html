@@ -231,7 +231,7 @@
             outline:none;
             border:none;
 
-            animation:play linear 1s infinite;         
+            /*animation:play linear 1s infinite;         */
             /*animation:play steps(20)  1s infinite both;       */
         }
 
@@ -241,7 +241,7 @@
     </style>
 </head>
 
-<body>
+<body onload="all_load()">
     <div id="to_top" onclick="scroll('#to_top','body')">Top</div>
     <button id="pause" class="noprint" onclick="pause()">♫</button>
     <div id="scroll-percent"></div>
@@ -583,6 +583,11 @@
                     bgm.pause();
                 }
             }
+        }
+
+        //all resource is loaded
+        function all_load(){
+            $('#pause').style.animation = 'play linear 1s infinite'
         }
     </script>
 </body>

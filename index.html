@@ -195,11 +195,11 @@
                     </div>
 
                     <div class="desc">
-                        姓名:余奇 性别:男 年龄:27
-                        <br> 籍贯:河南 民族:汉<br> 生日:1990-3-22
-                        <br> 手机: <a href="tel:13661949652">13661949652</a><br> 邮箱: <a href="mailto:13661949652@163.com">13661949652@163.com</a><br>                        现居住地址:上海市松江区泗泾镇古楼公路759弄
-
-                        <br>
+                        <p>姓名:余奇 性别:男 年龄:27</p>
+                        <p>籍贯:河南 民族:汉<br> 生日:1990-3-22</p>
+                        <p>手机: <a href="tel:13661949652">13661949652</a></p>
+                        <p>邮箱: <a href="mailto:13661949652@163.com">13661949652@163.com</a></p>
+                        <p>现居住地址:上海市松江区泗泾镇古楼公路759弄</p>
                     </div>
                 </div>
 
@@ -265,17 +265,17 @@
                 <h5>工作经历</h5>
             </div>
             <div class="panel-body">
-                <div id="exp_1" onclick="scroll('#exp_1','#prj_1')" class="hbox">
+                <div id="exp_1" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_1','#prj_1')" class="hbox">
                     <div class="date">2011-7-2013-12</div>
                     <div class="company">南京中兴软创股份有限公司</div>
                     <div class="job">flex开发工程师</div>
                 </div>
-                <div id="exp_2" onclick="scroll('#exp_2','#prj_2')" class="hbox">
+                <div id="exp_2"onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_2','#prj_2')" class="hbox">
                     <div class="date">2014-3-2016-8</div>
                     <div class="company">上海心意答信息科技有限公司</div>
                     <div class="job">前端开发工程师</div>
                 </div>
-                <div id="exp_3"onclick="scroll('#exp_3','#prj_3')" class="hbox">
+                <div id="exp_3"onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_3','#prj_3')" class="hbox">
                     <div class="date">2016-至今</div>
                     <div class="company">上海智思信息科技有限公司</div>
                     <div class="job">nodejs 全栈开发工程师</div>
@@ -416,6 +416,18 @@
                 }, 1000);
             }
         })
+
+        function show_prjs(e){
+            var eid = e.currentTarget.id;
+            var pidSelector = '#' + eid.replace('exp','prj')
+            $(pidSelector).style.border = '3px solid red';
+        }
+
+        function hide_prjs(e){
+            var eid = e.currentTarget.id;
+            var pidSelector = '#' + eid.replace('exp', 'prj')
+            $(pidSelector).style.border = 'none';
+        }
     </script>
 </body>
 

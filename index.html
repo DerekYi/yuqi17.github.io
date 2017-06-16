@@ -12,8 +12,8 @@
             padding: 0;
         }
 
-        a{
-            color:darkcyan;
+        a {
+            color: darkcyan;
         }
 
         html {
@@ -133,45 +133,45 @@
         }
 
         .len {
-            border:1px solid darkcyan;
-            padding:1px;
+            border: 1px solid darkcyan;
+            padding: 1px;
             box-sizing: border-box;
-            width:70%;
+            width: 70%;
             color: #fff;
         }
 
-        
 
-        div[id^='exp_']{
+        div[id^='exp_'] {
             opacity: 1;
             /*animation: fadeIn ease 2s;*/
-            cursor:pointer;
+            cursor: pointer;
             border-bottom: 1px dashed darkcyan;
         }
 
-        .date,.company,.job{
+        .date,
+        .company,
+        .job {
             display: inline-block;
             text-align: center;
-            width:33%;
+            width: 33%;
         }
 
-        div[id^='prj_']{
+        div[id^='prj_'] {
             margin-bottom: 8px;
             border-bottom: 1px dashed darkcyan;
         }
 
-        @keyframes fadeIn{
-            from{
+        @keyframes fadeIn {
+            from {
                 height: 0;
                 opacity: 0;
             }
-            to{
-                height: 20px;
+            to {
+                height: 30px;
                 opacity: 1;
             }
         }
-
-        /*table{
+        /*::selection{
             border:1px darkcyan solid;
         }*/
     </style>
@@ -226,7 +226,7 @@
                 <div class="hbox">
                     <label>css3</label>
                     <div class="len">
-                        <div  style="width:50%;background-color:darkcyan;">熟练</div>
+                        <div style="width:50%;background-color:darkcyan;">熟练</div>
                     </div>
                 </div>
 
@@ -265,39 +265,21 @@
                 <h5>工作经历</h5>
             </div>
             <div class="panel-body">
-                <div id="exp_1" class="hbox">
+                <div id="exp_1" onclick="scroll('#exp_1','#prj_1')" class="hbox">
                     <div class="date">2011-7-2013-12</div>
                     <div class="company">南京中兴软创股份有限公司</div>
                     <div class="job">flex开发工程师</div>
                 </div>
-                <div id="exp_2" class="hbox">
+                <div id="exp_2" onclick="scroll('#exp_2','#prj_2')" class="hbox">
                     <div class="date">2014-3-2016-8</div>
                     <div class="company">上海心意答信息科技有限公司</div>
                     <div class="job">前端开发工程师</div>
                 </div>
-                <div id="exp_3" class="hbox">
+                <div id="exp_3"onclick="scroll('#exp_3','#prj_3')" class="hbox">
                     <div class="date">2016-至今</div>
-                    <div class="company">上海心意答信息科技有限公司</div>
+                    <div class="company">上海智思信息科技有限公司</div>
                     <div class="job">nodejs 全栈开发工程师</div>
                 </div>
-
-                <!--<table border="1px" cellspacing='0' width ='100%'>
-                    <tr id="exp_1" onclick="scroll('#exp_1','#prj_1')">
-                        <td>2011-7-2013-12</td>
-                        <td>南京中兴软创股份有限公司</td>
-                        <td>flex开发工程师</td>
-                    </tr>
-                    <tr id="exp_2" onclick="scroll('#exp_2','#prj_2')">
-                        <td> 2014-3-2016-8</td>
-                        <td>上海心意答信息科技有限公司</td>
-                        <td>前端开发工程师</td>
-                    </tr>
-                    <tr id="exp_3" onclick="scroll('#exp_3','#prj_3')">
-                        <td>2016-至今</td>
-                        <td>上海智思信息科技有限公司</td>
-                        <td>nodejs 全栈开发工程师</td>
-                    </tr>
-                </table>-->
             </div>
         </div>
         <div class="panel">
@@ -306,15 +288,15 @@
             </div>
             <div class="panel-body">
                 <div id="prj_1">
-                    <b>1.Zsmart_cvbs 系统</b> 
+                    <b>1.Zsmart_cvbs 系统</b>
                     <section>
                         项目描述:&nbsp;&nbsp;一个电信业务配置系统,基于 flex 和 java 两种主要技术开发.
                     </section>
                     <section>
-                    我的职责:&nbsp;&nbsp;负责活动管理模块和商机管理模块的后端服务和界面开发.
+                        我的职责:&nbsp;&nbsp;负责活动管理模块和商机管理模块的后端服务和界面开发.
                     </section>
                 </div>
-                
+
                 <div id="prj_2">
                     <b>2.心意答考试系统</b>
                     <section>
@@ -325,7 +307,7 @@
                     </section>
                 </div>
 
-                <div id="prj_2">
+                <div id="prj_3">
                     <b>3.智思云SASS HR 平台</b>
                     <section>
                         项目描述:&nbsp;&nbsp;此项目是一个公司办公系统,包括了人事管理,绩效管理,考勤管理,合同管理等模块
@@ -341,7 +323,8 @@
                 <h5>教育经历</h5>
             </div>
             <div class="panel-body">
-                2009-2011 信阳第七工业学校 &nbsp; 中专
+                <p>2009-2011 信阳第七工业学校 &nbsp; 中专</p>
+                <p></p>
             </div>
         </div>
         <div class="panel" id="last">
@@ -355,46 +338,64 @@
     </main>
     <footer>
         <address>
-            &hearts; 
-            <a href="https://yuqi17.github.io/">这个简历地址</a>
-             &#8195;
-            <a href="https://github.com/yuqi17/yuqi17.github.io">对应代码的github地址</a> 
-             &hearts;
+            &hearts;
+            <a href="https://yuqi17.github.io/">这个简历地址</a> &#8195;
+            <a href="https://github.com/yuqi17/yuqi17.github.io">对应代码的github地址</a> &hearts;
         </address>
         &copy; 2017 JohnsonYu
     </footer>
 
     <script>
-
-        function $(selector){
+        function $(selector) {
             return document.querySelector(selector)
         }
 
-        function scroll(from,to){
+        // compatable IE ; IE11 test ok
+        function isIE() {
+            // window.navigator.userAgent  this is old
+            return (!!window.ActiveXObject || "ActiveXObject" in window)
+        }
+
+        function setScroll(step){
+            if(isIE()){
+                document.documentElement.scrollTop += step;
+            }
+            else
+                document.body.scrollTop += step;
+        }
+
+        function getScrollHeight(){
+            return document.body.scrollHeight || document.documentElement.scrollHeight;
+        }
+
+        function getScrollTop(){
+            return document.body.scrollTop || document.documentElement.scrollTop;
+        }
+
+        function scroll(from, to) {
             var fromValue = $(from).offsetTop;
             var toValue = $(to).offsetTop;
             var s = (toValue - fromValue)
 
-             function animate() {
+            function animate() {
                 if (s > 0) {
-                    document.body.scrollTop += 25;
+                    setScroll(25)
                 }
-                else if(s < 0){
-                    document.body.scrollTop -= 25;
+                else if (s < 0) {
+                    setScroll(-25)
                 }
 
                 var id;
-                var scrollHeight = document.body.scrollHeight;
-                var scrollTop = document.body.scrollTop;
+                var scrollHeight = getScrollHeight();
+                var scrollTop = getScrollTop();
 
-                if(scrollTop === toValue
+                if (scrollTop === toValue
                     || scrollTop + toValue > scrollHeight
-                    ){
+                ) {
                     id && window.cancelAnimationFrame(id)
                 }
-                else
-                {
-                    id =  window.requestAnimationFrame(animate)
+                else {
+                    id = window.requestAnimationFrame(animate)
                 }
             }
 
@@ -402,13 +403,17 @@
         }
 
         window.addEventListener('scroll', function () {
-            var scrollTop = document.body.scrollTop;
+ 
+            var scrollTop = getScrollTop();
 
             $('#to_top').style.opacity = scrollTop > 0 ? 0.6 : 0;
 
-            if(scrollTop >= 524){
-                $("div[id^='exp_']").style.animation = 'fadeIn ease 2s'
-
+            if (scrollTop === 524) {//this is a magic number
+                $("div[id^='exp_']").style.animation = 'fadeIn ease 1s'
+                // play animation first and for it can be played again delay 1s
+                setTimeout(function() {
+                    $("div[id^='exp_']").style.animation = 'none'
+                }, 1000);
             }
         })
     </script>

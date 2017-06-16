@@ -1,4 +1,2 @@
 
-[余奇的github博客](http://yuqi17.github.io)
-
-# Well,Welcome to my github blog。
+# Well,Welcome to  [My github blog](http://yuqi17.github.io)

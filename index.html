@@ -143,9 +143,12 @@
 
         div[id^='exp_'] {
             opacity: 1;
-            /*animation: fadeIn ease 2s;*/
             cursor: pointer;
             border-bottom: 1px dashed darkcyan;
+        }
+
+        div[id^='exp_']:hover{
+            border:2px solid red;
         }
 
         .date,
@@ -316,7 +319,7 @@
                         用到技术:&nbsp;&nbsp;
                         <code>java</code> 
                         <code>flex</code>
-                        <code>plsql</code>.
+                        <code>plsql</code>
                     </section>
                 </div>
 
@@ -395,7 +398,7 @@
                 <h5>教育经历</h5>
             </div>
             <div class="panel-body">
-                <p>2009-2011 信阳第七工业学校 &nbsp; 中专</p>
+                <p>2008-2011 信阳第七工业学校 &nbsp; 中专</p>
                 <p></p>
             </div>
         </div>
@@ -492,7 +495,7 @@
         function show_prjs(e){
             var eid = e.currentTarget.id;
             var pidSelector = '#' + eid.replace('exp','prj')
-            $(pidSelector).style.border = '3px solid red';
+            $(pidSelector).style.border = '2px solid red';
         }
 
         function hide_prjs(e){

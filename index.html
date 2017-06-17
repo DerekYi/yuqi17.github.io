@@ -470,7 +470,7 @@
     </footer>
 
     <script>
-        // 去掉 手机端测试语句
+        // 手机端测试语句
         // alert(window.navigator.userAgent)
         // alert('test4')
         
@@ -505,7 +505,8 @@
         }
 
         function scrollStep(from, to) {
-            clearBothBorder(from)
+            if(from.indexOf('exp_') > -1)
+                clearBothBorder(from)
 
             var fromValue = $(from).offsetTop;
             var toValue = $(to).offsetTop;

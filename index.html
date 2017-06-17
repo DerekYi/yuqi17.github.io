@@ -241,7 +241,7 @@
     </style>
 </head>
 
-<body onload="all_load()">
+<body>
     <div id="to_top" onclick="scroll('#to_top','body')">Top</div>
     <button id="pause" class="noprint" onclick="pause()">♫</button>
     <div id="scroll-percent"></div>
@@ -333,17 +333,17 @@
                 <h5>工作经历</h5>
             </div>
             <div class="panel-body">
-                <div id="exp_1" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_1','#prj_1')" class="hbox">
+                <div id="exp_1" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scrollStep('#exp_1','#prj_1');" class="hbox">
                     <div class="date">2011-7-2013-12</div>
                     <div class="company">南京中兴软创股份有限公司</div>
                     <div class="job">flex开发工程师</div>
                 </div>
-                <div id="exp_2" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_2','#prj_2')" class="hbox">
+                <div id="exp_2" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scrollStep('#exp_2','#prj_2')" class="hbox">
                     <div class="date">2014-3-2016-8</div>
                     <div class="company">上海心意答信息科技有限公司</div>
                     <div class="job">前端开发工程师</div>
                 </div>
-                <div id="exp_3" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scroll('#exp_3','#prj_3')" class="hbox">
+                <div id="exp_3" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scrollStep('#exp_3','#prj_3')" class="hbox">
                     <div class="date">2016-至今</div>
                     <div class="company">上海智思信息科技有限公司</div>
                     <div class="job">nodejs 全栈开发工程师</div>
@@ -458,7 +458,7 @@
                 谢谢您看到了这里,这个简历的代码是我独立完成的,尽量不用第三方,尽量适配多种屏幕,由于没有做低版本IE浏览器兼容,请您最好用 chrome 浏览器查看,希望它能给您留下一个面试的好印象.谢谢.
             </div>
         </div>
-        <audio id="bgm" autoplay="autoplay" loop="loop" preload="preload" src='./audios/summer1.mp3'>IE 11 no supported wav formmt</audio>
+        <audio id="bgm" autoplay="autoplay" loop="loop" preload="preload"  src='./audios/summer1.mp3'>IE 11 no supported wav formmt</audio>
     </main>
     <footer>
         <address>
@@ -471,6 +471,9 @@
 
     <script>
         alert(window.navigator.userAgent)
+
+        $('#bgm').addEventListener('playing',all_load)
+
         // $('#test').innerText = window.navigator.userAgent;
         function $(selector) {
             return document.querySelector(selector)
@@ -498,10 +501,10 @@
             return document.body.scrollTop || document.documentElement.scrollTop;
         }
 
-        function scroll(from, to) {
+        function scrollStep(from, to) {
             var fromValue = $(from).offsetTop;
             var toValue = $(to).offsetTop;
-            var s = (toValue - fromValue)
+            var s = (toValue - fromValue);
 
             function animate() {
                 if (s > 0) {

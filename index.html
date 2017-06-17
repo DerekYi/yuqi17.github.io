@@ -333,7 +333,7 @@
                 <h5>工作经历</h5>
             </div>
             <div class="panel-body">
-                <div id="exp_1" onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scrollStep('#exp_1','#prj_1');" class="hbox">
+                <div id="exp_1" ontouchstart = "alert()"  onmouseover="show_prjs(event)" onmouseout="hide_prjs(event)" onclick="scrollStep('#exp_1','#prj_1');" class="hbox">
                     <div class="date">2011-7 至 2013-12</div>
                     <div class="company">南京中兴软创股份有限公司</div>
                     <div class="job">flex开发工程师</div>
@@ -471,7 +471,11 @@
 
     <script>
         alert(window.navigator.userAgent)
-        alert('test')
+        alert('test1')
+
+        documnet.addEventListener('touchstart',function(){
+            alert(111)
+        })
         
         function $(selector) {
             return document.querySelector(selector)

@@ -472,7 +472,7 @@
     <script>
         alert(window.navigator.userAgent)
         alert('test')
-        // $('#test').innerText = window.navigator.userAgent;
+        
         function $(selector) {
             return document.querySelector(selector)
         }
@@ -488,13 +488,11 @@
         }
 
         function setScroll(step) {
-            // if (isIE()||isFirefox()) {
-            //     document.documentElement.scrollTop += step;
-            // }
-            // else//chrome and safari can work
-            //     document.body.scrollTop += step;
-
-            document.documentElement.scrollTop += step;
+            if (isIE()||isFirefox()) {
+                document.documentElement.scrollTop += step;
+            }
+            else//chrome and safari can work
+                document.body.scrollTop += step;
         }
 
         function getScrollHeight() {

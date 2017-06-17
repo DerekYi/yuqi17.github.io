@@ -242,7 +242,7 @@
 </head>
 
 <body>
-    <div id="to_top" onclick="scroll('#to_top','body')">Top</div>
+    <div id="to_top" onclick="scrollStep('#to_top','body')">Top</div>
     <button id="pause" class="noprint" onclick="pause()">♫</button>
     <div id="scroll-percent"></div>
     
@@ -484,12 +484,18 @@
             return (!!window.ActiveXObject || "ActiveXObject" in window)
         }
 
+        function isFirefox(){
+            return window.navigator.userAgent.indexOf("Firefox") > -1
+        }
+
         function setScroll(step) {
-            if (isIE()) {
-                document.documentElement.scrollTop += step;
-            }
-            else
-                document.body.scrollTop += step;
+            // if (isIE()||isFirefox()) {
+            //     document.documentElement.scrollTop += step;
+            // }
+            // else//chrome and safari can work
+            //     document.body.scrollTop += step;
+
+            document.documentElement.scrollTop += step;
         }
 
         function getScrollHeight() {

@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PM2 的作用</title>
+    <style>
+        .title{
+            /*transform:translateX(45%)*/
+            display:flex;
+            justify-content: center;
+        }
+        pre{
+            padding:4px;
+            background-color:bisque;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
+    <div class="title">PM2 对koa2 服务的作用</div>
     <pre>
         前提准备:
         1.node安装好
@@ -17,6 +30,24 @@
         6.浏览器输入http://localhost:3000 打开首页
     </pre>
     
+    <pre>
+        对比测试:(我的测试环境cpu: 2.7GHz 两核心; memory: 8 GB 1867 MHz DDR3)
+        1.在一次请求里面做5000次循环
+        2.用普通node启动方式开启服务,访问响应的平均时间在90ms
+        3.用pm2 开启2个进程(cluster)(pm2 start ./bin/www -i 2),访问响应的平均时间大概也是90ms
+    </pre>
+
+    <pre>
+        结论:
+        pm2 集群的作用不是提高单个任务的响应时间,而是在访问量比较大的时候,可以根据集群的节点负载情况,合理的分发请求.从而整个应用保持相对
+        稳定.
+    </pre>
+
+    <pre>
+        可以去注册一个pm2 作者的管理网站(https://app.keymetrics.io)的账号,通过配置后
+        再启动服务可以很好的监控node 服务的参数.当然天下没有免费的午餐,如果要支持超过两个服务
+        器的情况就要交钱了,一年准备约5000RMB.闲贵的话就用pm2 monit
+    </pre>
 
 
 </body>

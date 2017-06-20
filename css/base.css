@@ -3,3 +3,14 @@
 ::selection{
 	background: green;
 }
+
+.title{
+	/*transform:translateX(45%)*/
+	display:flex;
+	justify-content: center;
+}
+pre{
+	padding:4px;
+	background-color:bisque;
+	border-radius: 5px;
+}

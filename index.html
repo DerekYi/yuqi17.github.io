@@ -43,7 +43,7 @@
 
         @media print {
             .noprint {
-                display: none
+                display: none;
             }
         }
 
@@ -310,7 +310,7 @@
 </head>
 
 <body onload="loaded()">
-    <div id="to_top" onclick="scrollStep('#to_top','body')">Top</div>
+    <div id="to_top" class="noprint" onclick="scrollStep('#to_top','body')">Top</div>
     <button id="pause" class="noprint" onclick="pause()">♫</button>
     <div id="scroll-percent"></div>
     
